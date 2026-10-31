@@ -2,6 +2,12 @@
 
 結合傳統命理與 AI 解讀的多元占卜網站。輸入生辰或抽一副牌，系統會先用程式精確排出命盤，再交給 Google Gemini 以命理師的口吻給出解讀，解讀後還能繼續追問。
 
+### 🔮 [立即使用 → tarot-rag.onrender.com](https://tarot-rag.onrender.com/)
+
+不用安裝任何東西，點開連結就能直接占卜。
+
+> 網站部署在 Render 免費方案，閒置一段時間後會進入休眠，第一次打開可能需要等 30 秒到 1 分鐘喚醒，之後就會恢復正常速度。
+
 ## 功能
 
 | 項目 | 說明 |
@@ -49,6 +55,8 @@
 
 ## 本機執行
 
+只是想用的話，直接打開[線上版](https://tarot-rag.onrender.com/)就可以了。以下是想自己架設或修改程式時的步驟。
+
 需要 Node.js 18 以上版本，以及一組 [Gemini API 金鑰](https://aistudio.google.com/apikey)。
 
 ```bash
@@ -73,6 +81,8 @@ npm start
 打開 <http://localhost:3000> 即可使用。
 
 ## API
+
+以下是網站後端提供給前端的接口。所有解讀與對話都由伺服器呼叫 **Google Gemini API**（模型：`gemini-flash-lite-latest`）產生，Gemini 金鑰只保存在伺服器端，不會傳到瀏覽器。
 
 | 方法 | 路徑 | 說明 |
 | --- | --- | --- |
